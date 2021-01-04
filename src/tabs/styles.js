@@ -11,6 +11,27 @@ export const TitleContent = styled.h1`
     text-align: center;
   }
 `;
+export const Tab = styled.div`
+  display: ${({ active }) => (active ? "flex" : "flex")};
+  cursor: pointer;
+  background-color: ${({ active }) => (active ? "#b3b3b3" : "#f8f8f8")};
+  color: ${({ active }) => (active ? "#fff" : "#000000")};
+  margin-right: 1px;
+  padding: 15px;
+  align-items: center;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 1px;
+    justify-content: center;
+    margin-right: 0;
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+  &:hover {
+    background-color: #b3b3b3;
+    color: #fff;
+  }
+`;
 export const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -30,29 +51,6 @@ export const Container = styled.div`
     @media screen and (max-width: 768px) {
       width: 100%;
       flex-direction: column;
-    }
-  }
-  .tab {
-    display: flex;
-    cursor: pointer;
-    background-color: #f3f2f2;
-    margin-right: 1px;
-    padding: 15px;
-    align-items: center;
-    @media screen and (max-width: 768px) {
-      margin-bottom: 1px;
-      justify-content: center;
-      margin-right: 0;
-      :last-child {
-        margin-bottom: 0;
-      }
-    }
-    &:hover {
-      background-color: #f8f8f8;
-    }
-    &.active {
-      background-color: #dcdcdc;
-      color: black;
     }
   }
   .content {
