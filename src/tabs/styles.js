@@ -1,14 +1,28 @@
 import styled from "styled-components";
 
-export const TitleContent = styled.h1`
+export const Container = styled.div`
   display: flex;
-  margin-top: 0;
-  font-size: 35px;
-  line-height: 60px;
-  text-shadow: 3px 3px rgba(0, 0, 0, 0.1);
-  color: #333;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  flex-direction: column;
+  user-select: none;
   @media screen and (max-width: 768px) {
-    text-align: center;
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    min-height: 100vh;
+  }
+  .textRight {
+    text-align: right;
+  }
+`;
+export const TabsBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
   }
 `;
 export const Tab = styled.div`
@@ -32,39 +46,25 @@ export const Tab = styled.div`
     color: #fff;
   }
 `;
-export const Container = styled.div`
+export const ContentBox = styled.div`
   display: flex;
-  justify-content: center;
-  width: 50%;
-  margin: 0 auto;
-  flex-direction: column;
-  user-select: none;
+  height: auto;
+  border: 1px solid #dcdcdc;
+  padding: 20px;
+  background-color: #fff;
+  //overflow-y: scroll;
   @media screen and (max-width: 768px) {
-    display: flex;
-    justify-content: start;
-    width: 100%;
-    min-height: 100vh;
+    border: none;
   }
-  .tabs {
-    display: flex;
-    flex-direction: row;
-    @media screen and (max-width: 768px) {
-      width: 100%;
-      flex-direction: column;
-    }
-  }
-  .content {
-    display: flex;
-    height: auto;
-    border: 1px solid #dcdcdc;
-    padding: 20px;
-    background-color: #fff;
-    //overflow-y: scroll;
-    @media screen and (max-width: 768px) {
-      border: none;
-    }
-  }
-  .textRight {
-    text-align: right;
+`;
+export const TitleContent = styled.h1`
+  display: flex;
+  margin-top: 0;
+  font-size: 35px;
+  line-height: 60px;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.1);
+  color: #333;
+  @media screen and (max-width: 768px) {
+    text-align: center;
   }
 `;
