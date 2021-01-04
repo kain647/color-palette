@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, TitleContent } from "./styles";
+import { Container, TitleContent, Tab } from "./styles";
 
 class Tabs extends Component {
   constructor(props) {
@@ -19,15 +19,15 @@ class Tabs extends Component {
       <Container>
         <div className="tabs">
           {items.map((item, index) => (
-            <div
+            <Tab
               key={item.label}
               onClick={() => {
                 this.changeTab(index);
               }}
-              className={`tab ${active === index ? "active" : ""}`}
+              active={active === index}
             >
               {item.label}
-            </div>
+            </Tab>
           ))}
         </div>
         <div className="content">{items[active].content}</div>
