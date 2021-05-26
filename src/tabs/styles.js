@@ -3,10 +3,9 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-  width: 50%;
   margin: 0 auto;
   flex-direction: column;
-  user-select: none;
+  //user-select: none;
   @media screen and (max-width: 768px) {
     display: flex;
     justify-content: start;
@@ -17,22 +16,60 @@ export const Container = styled.div`
     text-align: right;
   }
 `;
+export const TitleProject = styled.h1`
+  display: flex;
+  font-family: "Josefin Sans", sans-serif;
+  width: 100%;
+  flex-direction: row;
+  color: #fff;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  line-height: 1.1;
+`;
 export const TabsBox = styled.div`
   display: flex;
+  height: 61px;
+  align-items: flex-end;
   flex-direction: row;
+  padding: 0px 10px 0px 10px;
   @media screen and (max-width: 768px) {
     width: 100%;
     flex-direction: column;
   }
 `;
-export const Tab = styled.div`
-  display: ${({ active }) => (active ? "flex" : "flex")};
-  cursor: pointer;
-  background-color: ${({ active }) => (active ? "#b3b3b3" : "#f8f8f8")};
-  color: ${({ active }) => (active ? "#fff" : "#000000")};
-  margin-right: 1px;
-  padding: 15px;
+export const ContentBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  border: 1px solid #dcdcdc;
+  padding: 20px;
+  background-color: #fff;
+  text-transform: uppercase;
+  //overflow-y: scroll;
+  @media screen and (max-width: 768px) {
+    border: none;
+  }
+`;
+export const Tab = styled.div`
+  display: flex;
+  cursor: pointer;
+  background: ${({ label }) => label};
+  margin-right: 1px;
+  width: 50px;
+  height: ${({ active }) => (active ? "60px" : "50px")};
+  border-radius: ${({ active }) => (active ? "10px 10px 0 0" : "0 0 0 0")};
+  box-shadow: ${({ active }) =>
+    active ? "none" : "8px 12px 25px 2px rgb(0 0 0 / 40%)"};
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  //transform: translateY(20px);
   @media screen and (max-width: 768px) {
     margin-bottom: 1px;
     justify-content: center;
@@ -42,29 +79,25 @@ export const Tab = styled.div`
     }
   }
   &:hover {
-    background-color: #b3b3b3;
-    color: #fff;
+    //height: 55px;
   }
 `;
-export const ContentBox = styled.div`
+export const TitleContent = styled.div`
   display: flex;
-  height: auto;
-  border: 1px solid #dcdcdc;
-  padding: 20px;
-  background-color: #fff;
-  //overflow-y: scroll;
-  @media screen and (max-width: 768px) {
-    border: none;
-  }
+  margin-bottom: 20px;
+  font-size: 40px;
 `;
-export const TitleContent = styled.h1`
+export const ColorContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+`;
+export const ColorBox = styled.div`
   display: flex;
-  margin-top: 0;
-  font-size: 35px;
-  line-height: 60px;
-  text-shadow: 3px 3px rgba(0, 0, 0, 0.1);
-  color: #333;
-  @media screen and (max-width: 768px) {
-    text-align: center;
-  }
+  height: 100px;
+  width: 160px;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
 `;
